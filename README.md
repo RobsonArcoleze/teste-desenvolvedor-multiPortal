@@ -5,7 +5,7 @@
 
 # Sobre o projeto
 
-### Acesso a apliocação
+### Acesso a aplicação
 
 
 - Usuário: user

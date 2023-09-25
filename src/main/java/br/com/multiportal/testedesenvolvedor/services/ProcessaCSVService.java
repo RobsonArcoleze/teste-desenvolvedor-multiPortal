@@ -47,13 +47,6 @@ public class ProcessaCSVService {
         }
     }
 
-    private Integer corrigeIdade(LocalDate nascimento) {
-        LocalDate dataAtual = LocalDate.now();
-        Period periodo = Period.between(nascimento, dataAtual);
-
-        return periodo.getYears();
-    }
-
     private LocalDate ajusteData(String data, Integer idade){
          String[] partes = data.split("/");
          int dia = Integer.parseInt(partes[0]);
