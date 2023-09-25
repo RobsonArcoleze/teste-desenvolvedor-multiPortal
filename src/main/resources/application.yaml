@@ -1,0 +1,17 @@
+
+server:
+  port: 8025
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 72551984
+  jpa:
+    database: POSTGRESQL
+    hibernate.ddl-auto: none
+    show-sql: false
+
+  flyway:
+    baseline-on-migrate: true

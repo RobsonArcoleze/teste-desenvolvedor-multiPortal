@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Import CSV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .header {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .header button {
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+<header class="navbar navbar-dark header">
+    <div class="container">
+        <h1 class="navbar-brand">Ajuste de CSV</h1>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn btn-danger">Sair</button>
+        </form>
+    </div>
+</header>
+
+<div class="container mt-4">
+    <form th:action="@{/csv}" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">Selecione um arquivo CSV:</label>
+            <input type="file" id="file_id" name="file" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Enviar Arquivo</button>
+        </div>
+    </form>
+
+    <!-- Mostrar os dados após o envio do formulário -->
+    <div th:if="${analisePessoaDTO != null}">
+        <div class="alert alert-success">
+            <p>Total de Homens: <span th:text="${analisePessoaDTO.totalHomens}"></span></p>
+            <p>Total de Mulheres: <span th:text="${analisePessoaDTO.totalMulheres}"></span></p>
+            <p>Média de Idade dos Homens: <span th:text="${analisePessoaDTO.mediaIdadeHomens}"></span></p>
+            <p>Média de Idade das Mulheres: <span th:text="${analisePessoaDTO.mediaIdadeMulheres}"></span></p>
+        </div>
+        <div>
+            <p>Download: <a th:href="@{analisePessoaDTO.novoCSV}" download="novo-arquivo.csv"><span th:text="${analisePessoaDTO.novoCSV}"></span></a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts do Bootstrap (jQuery e Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+J6ft6K5z5I9d5f0n4lqn8zvLlEJzF5v4F5t5Oy04meM1a7xj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</body>
+</html>
+
