@@ -1,7 +1,15 @@
 # Teste Desenvolvedor 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
 
+
+
 # Sobre o projeto
+
+### Acesso a apliocação
+
+
+- Usuário: user
+- Password: 1234
 
 Neste teste consta uma aplicação full stack web mvc com java 17, spring boot 3, thymeleaf e bootstrap proposto pela empresa [Multi Portal](https://www.mportal.com.br/ "Site da Multi Portal").
 
